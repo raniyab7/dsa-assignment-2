@@ -58,3 +58,15 @@ int main() {
 
     return 0;
 }
+/*For the department search, four keys were tested — Backend, IT, HR, and Finance — on the same sorted list of 8 departments.
+
+When searching for "Backend", linear search found it in 1 comparison because it was the first element, while binary search took 3 comparisons.
+
+When searching for "IT", linear search needed 7 comparisons since it was near the end of the list, but binary search found it in only 2 comparisons.
+
+When searching for "HR", linear search took 6 comparisons, while binary search again finished in just 2 comparisons.
+
+When searching for "Finance", linear search took 4 comparisons, and binary search took only 1 comparison because it was the middle element.
+
+From these results, it is clear that linear search depends on the position of the key in the list — it may take anywhere from 1 to 8 comparisons. Binary search, on the other hand, always finishes within 3 comparisons or fewer because it repeatedly divides the sorted list in half. So binary search is faster and more efficient than linear search for this department search operation.
+*/
