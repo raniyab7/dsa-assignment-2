@@ -1,0 +1,60 @@
+#include <stdio.h>
+#include <string.h>
+
+int linearSearch(char arr[][20], int n, char *key) {
+    int count = 0;
+    for (int i = 0; i < n; i++) {
+        count++;
+        if (strcmp(arr[i], key) == 0) {
+            printf("Linear: found at index %d, comparisons = %d\n", i, count);
+            return count;
+        }
+    }
+    printf("Linear: not found, comparisons = %d\n", count);
+    return count;
+}
+
+int binarySearch(char arr[][20], int n, char *key) {
+    int low = 0, high = n - 1, count = 0;
+
+    while (low <= high) {
+        count++;
+        int mid = (low + high) / 2;
+        int cmp = strcmp(arr[mid], key);
+
+        if (cmp == 0) {
+            printf("Binary: found at index %d, comparisons = %d\n", mid, count);
+            return count;
+        } else if (cmp < 0) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+    printf("Binary: not found, comparisons = %d\n", count);
+    return count;
+}
+
+int main() {
+    char departments[8][20] = {
+        "Backend", "CEO", "Development", "Finance",
+        "Frontend", "HR", "IT", "Testing"
+    };
+    int n = 8;
+
+    printf("Departments (sorted): ");
+    for (int i = 0; i < n; i++)
+        printf("%s ", departments[i]);
+    printf("\n\n");
+
+    char searchList[4][20] = {"Backend", "IT", "HR", "Finance"};
+
+    for (int i = 0; i < 4; i++) {
+        printf("Key: %s\n", searchList[i]);
+        linearSearch(departments, n, searchList[i]);
+        binarySearch(departments, n, searchList[i]);
+        printf("\n");
+    }
+
+    return 0;
+}
