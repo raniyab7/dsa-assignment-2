@@ -1,0 +1,5 @@
+/*The organisational tree has 4 levels. The longest path is CEO → IT → Development → Frontend.
+Level-order traversal visits the nodes level by level: CEO → HR → Finance → IT → Development → Testing → Frontend → Backend. It is suitable for displaying the organisational hierarchy from top to bottom.
+Linear Search comparisons depend on the position of the department in the list. Binary Search requires fewer comparisons when the list is sorted. In the given searches, Binary Search required at most 3 comparisons, while Linear Search required up to 7 comparisons.
+The time complexity of building the tree is O(n). Level-order traversal is O(n). Sorting the department names is O(n log n). Linear Search is O(n), while Binary Search is O(log n).
+The tree structure is suitable for representing organisational reporting because it clearly shows the parent-child relationship between departments. A sorted list is suitable for department searching using Binary Search. Therefore, using a tree for organisational reporting and a sorted list for searching provides an effective representation for the system.*/
